@@ -10,7 +10,14 @@ import DayListItem from "components/DayListItem";
 import DayList from 'components/DayList';
 import InterviewerListItem from 'components/InterviewerListItem';
 import InterviewerList from 'components/InterviewerList.js';
+
 import Appointment from "components/Appointment/index";
+import Header from "components/Appointment/Header";
+import Empty from "components/Appointment/Empty";
+import Show from "components/Appointment/Show";
+import Confirm from 'components/Appointment/Confirm';
+import Status from 'components/Appointment/Status';
+import Error from 'components/Appointment/Error';
 
 
 storiesOf("Button", module)
@@ -144,5 +151,31 @@ storiesOf("Button", module)
       })
       .add("Appointment", () => <Appointment />)
       .add("Appointment with Time", () => <Appointment time="12pm" />)
+      .add("Header", () => <Header time="12pm" />)
+      .add("Empty", () => <Empty onAdd={action("onAdd")}/>)
+      .add("Show", () => 
+        <Show 
+          interviewer={interviewer} 
+          name={interviewer.name} 
+          student={'Lydia Miller-Jones'}
+          onEdit={action("onEdit")}
+          onDelete={action('onDelete')}
+          />
+      )
+      .add("Confirm", () => 
+        <Confirm
+          onCancel={action('onCancel')}
+          onConfirm={action('onConfirm')}
+        />
+      )
+      .add('Status', () =>
+      <Status
+      />
+      )
+      .add('Error', () => 
+      <Error
+        onClose={action('onClose')}
+      />
+      )
 
       

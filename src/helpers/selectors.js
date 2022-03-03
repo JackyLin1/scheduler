@@ -13,3 +13,21 @@ export function getAppointmentsForDay(state, day) {
 
   return result;
 }
+
+export function getInterview(state, interview) {
+  let result = {};
+  let intObj = state.interviewers;
+
+  if(!intObj || !interview){
+    return null;
+  }
+
+  for(const key in intObj) {
+    let interviewer = intObj[key];
+    if(interviewer.id === interview.interviewer){
+      result["interviewer"] = interviewer;
+      result["student"] = interview.student;
+    }
+  }
+  return result;
+}

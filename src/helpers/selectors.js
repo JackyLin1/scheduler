@@ -31,3 +31,19 @@ export function getInterview(state, interview) {
   }
   return result;
 }
+
+export function getInterviewersForDay (state, day) {
+  let result = [];
+  let filteredDay = state.days.filter(d => d.name === day)[0];
+
+  if(!state.days || !filteredDay){
+    return [];
+  }
+  
+  for(const id of filteredDay.appointments){
+    const interviewersObj = state.interviewers[id];
+    result.push(interviewersObj);
+  }
+
+  return result;
+}

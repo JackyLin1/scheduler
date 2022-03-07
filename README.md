@@ -5,13 +5,13 @@
 Install dependencies with `npm install`.
 ## Final Product
 The Main Page.
-!["screenshot description"]
+!["screenshot description"](https://github.com/JackyLin1/scheduler/blob/master/public/images/Main%20Page.PNG)
 
 The Compose Page
-!["screenshot description"]
+!["screenshot description"](https://github.com/JackyLin1/scheduler/blob/master/public/images/Choosing.PNG)
 
-Saved
-!["screenshot description"]
+
+!["screenshot description"](https://github.com/JackyLin1/scheduler/blob/master/public/images/Saved.PNG)
 
 ## Running Webpack Development Server
 
@@ -30,3 +30,15 @@ npm test
 ```sh
 npm run storybook
 ```
+## Dependencies
+
+-body-parser
+-cors
+-dotenv
+-Express
+-helmet
+-pg
+-socket.io
+-ws
+-jest
+-stroybook

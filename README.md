@@ -3,6 +3,15 @@
 ## Setup
 
 Install dependencies with `npm install`.
+## Final Product
+The Main Page.
+!["screenshot description"]
+
+The Compose Page
+!["screenshot description"]
+
+Saved
+!["screenshot description"]
 
 ## Running Webpack Development Server
 

@@ -42,3 +42,4 @@ npm run storybook
 -ws
 -jest
 -stroybook
+-scheduler-api

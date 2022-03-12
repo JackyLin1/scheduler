@@ -33,14 +33,14 @@ npm run storybook
 ```
 ## Dependencies
 
-*body-parser
-*cors
-*dotenv
-*Express
-*helmet
-*pg
-*socket.io
-*ws
-*jest
-*stroybook
-*scheduler-api
+-body-parser
+-cors
+-dotenv
+-Express
+-helmet
+-pg
+-socket.io
+-ws
+-jest
+-stroybook
+-scheduler-api

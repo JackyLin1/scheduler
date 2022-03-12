@@ -22,23 +22,27 @@ export default function useApplicationData () {
     return Days;
   }
 
-  function bookInterview (id, interview) {
+  function bookInterview (id, interview, edit) {
     const appointment = {...state.appointments[id], interview: { ...interview }};
     const appointments = {...state.appointments,[id]: appointment};
-    const spots = updateSpots(-1);
+    if(!edit) {
+      updateSpots(-1);
+    } else {
+      updateSpots(0);
+    }
      return axios.put(`/api/appointments/${id}`, { interview })
     .then(
-      setState({ ...state, appointments, spots})
+      setState({ ...state, appointments})
     );
   };
 
   function onDelete(id) {
     const appointment = { ...state.appointments[id], interview: null };
     const appointments = { ...state.appointments, [id]: appointment };
-    const spots = updateSpots(+1);
+    updateSpots(+1);
     return axios.delete(`/api/appointments/${id}`, appointment)
       .then( 
-        setState({...state, appointments, spots})
+        setState({...state, appointments})
       );
   };
 

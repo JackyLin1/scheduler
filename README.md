@@ -43,4 +43,4 @@ npm run storybook
 * ws
 * jest
 * stroybook
-* scheduler-api [a link](https://github.com/JackyLin1/scheduler-api)
+* scheduler-api [download here](https://github.com/JackyLin1/scheduler-api)

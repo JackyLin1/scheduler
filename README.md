@@ -1,5 +1,5 @@
 # Interview Scheduler
-This project is a React application that allows users to schedule their interviews. It's a project that focuses on utilizing React and practice code testing tools, such as, Cypress,JEST and Storybook.
+This project is a React application that allows users to schedule their interviews. It's a project that focuses on utilizing React and practice code testing tools, such as, Cypress, JEST and Storybook.
 
 ## Setup
 
@@ -33,14 +33,14 @@ npm run storybook
 ```
 ## Dependencies
 
--body-parser
--cors
--dotenv
--Express
--helmet
--pg
--socket.io
--ws
--jest
--stroybook
--scheduler-api
+* body-parser
+* cors
+* dotenv
+* Express
+* helmet
+* pg
+* socket.io
+* ws
+* jest
+* stroybook
+* scheduler-api

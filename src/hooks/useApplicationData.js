@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import axios from "axios";
 
 export default function useApplicationData () {
-  
+  //default state
   const [state, setState] = useState({
     day: "Monday",
     days: [],
@@ -10,6 +10,7 @@ export default function useApplicationData () {
     interviewers: {},
   });
 
+  // go through ...state.days and update spots number based on argument
   const updateSpots = (num) => { 
     let filteredDay = state.days.filter(d => d.name === state.day)[0];
     const Days = [...state.days];
@@ -22,6 +23,7 @@ export default function useApplicationData () {
     return Days;
   }
 
+  //logic for booking a spot, if not edit mode update spots
   function bookInterview (id, interview, edit) {
     const appointment = {...state.appointments[id], interview: { ...interview }};
     const appointments = {...state.appointments,[id]: appointment};
@@ -36,6 +38,7 @@ export default function useApplicationData () {
     );
   };
 
+  // logic for deleting a spot, update spots if something is delted
   function onDelete(id) {
     const appointment = { ...state.appointments[id], interview: null };
     const appointments = { ...state.appointments, [id]: appointment };
@@ -46,8 +49,10 @@ export default function useApplicationData () {
       );
   };
 
+  // set state of Day
   const setDay = day => setState({...state, day})
 
+  // all axios route to the scheduler-api
   useEffect(() => {
 
     Promise.all([

@@ -68,7 +68,7 @@ export default function Appointment (props) {
       
     {mode === ERROR_DELETE && 
       <Error message={'Unable to delete your appointment'} 
-      onClose={() => transition(EDIT)} />}
+      onClose={back} />}
     
     {mode === SHOW && 
       <Show

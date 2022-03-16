@@ -33,9 +33,9 @@ export default function useApplicationData () {
       updateSpots(0);
     }
      return axios.put(`/api/appointments/${id}`, { interview })
-    .then(
+    .then(() => {
       setState({ ...state, appointments})
-    );
+    });
   };
 
   // logic for deleting a spot, update spots if something is delted
@@ -44,9 +44,9 @@ export default function useApplicationData () {
     const appointments = { ...state.appointments, [id]: appointment };
     updateSpots(+1);
     return axios.delete(`/api/appointments/${id}`, appointment)
-      .then( 
+      .then(() => {
         setState({...state, appointments})
-      );
+      });
   };
 
   // set state of Day

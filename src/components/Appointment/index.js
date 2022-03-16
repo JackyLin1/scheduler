@@ -22,8 +22,8 @@ const ERROR_DELETE = "ERROR_DELETE";
 
 export default function Appointment (props) {
 
-  const { mode, transition, back } = useVisualMode(
-    props.interview ? SHOW : EMPTY
+const { mode, transition, back } = useVisualMode(
+  props.interview ? SHOW : EMPTY
   );
 
  
@@ -64,7 +64,7 @@ export default function Appointment (props) {
 
     {mode === ERROR_SAVE && 
       <Error message={'Unable to save your appointment'} 
-      onClose={() =>{transition(CREATE)}} />}
+      onClose={back} />}
       
     {mode === ERROR_DELETE && 
       <Error message={'Unable to delete your appointment'} 

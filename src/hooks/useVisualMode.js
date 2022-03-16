@@ -19,8 +19,10 @@ export default function useVisualMode(initial) {
   // if there's history, setmode to the top of history
   function back() {
     if (history.length > 1) {
-      setMode(history[history.length - 2]);
-      setHistory(prev => prev.slice(0, prev.length - 1));
+      setHistory(prev => {
+        setMode(prev[prev.length - 2])
+        return prev.slice(0, prev.length - 1)
+      });
     }
   };
    return { mode, transition, back };

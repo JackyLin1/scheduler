@@ -40,7 +40,7 @@ export function getInterviewersForDay (state, day) {
   let filteredDay = state.days.filter(d => d.name === day)[0];
 
 
-  if(!state.days || !filteredDay || filteredDay.interviewers) {
+  if(!state.days || !filteredDay) {
     return [];
   }
   
